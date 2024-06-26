@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicações - Farmacinha</title>
+  <link rel="stylesheet" href="{% static 'DashboardStyle/style.css' %}">
+  <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="{% static 'DashboardStyle/script.js' %}" defer></script>
+</head>
+<body>
+ 
+  <nav class="sidebar locked">
+    <div class="logo_items flex">
+      <span class="nav_image">
+        <img src="{% static 'DashboardStyle/logo2.png' %}" alt="logo_img">
+      </span>
+      <span class="logo_name">DrugRecall</span>
+      <i class="bx bx-lock-alt" id="lock-icon" title="Unlock Sidebar"></i>
+      <i class="bx bx-x" id="sidebar-close"></i>
+    </div>
+
+    <div class="menu_container">
+      <div class="menu_items">
+        <ul class="menu_item">
+          <div class="menu_title flex">
+            <span class="title">Dashboard</span>
+            <span class="line"></span>
+          </div>
+          <li class="item">
+            <a href="{% url 'appDashboard' %}" class="link flex">
+              <i class="bx bx-home-alt"></i>
+              <span>Sobre tudo</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="{% url 'appDashboardMedicamentos' %}" class="link flex">
+              <i class="bx bx-grid-alt"></i>
+              <span>Medicações Manuais</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="menu_item">
+          <div class="menu_title flex">
+            <span class="title">Atendentes</span>
+            <span class="line"></span>
+          </div>
+          <li class="item">
+            <a href="{% url 'appDashboardUsuarios' %}" class="link flex">
+              <i class="bx bxs-magic-wand"></i>
+              <span>Usuários</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-folder"></i>
+              <span>Configuração de cookies</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="{% url 'appDashboardPosts' %}" class="link flex">
+              <i class="bx bx-cloud-upload"></i>
+              <span>Enviar posts</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar_profile flex">
+          <span class="nav_image">
+            <img src="{% static 'images/profile.jpg' %}" alt="profile_img">
+          </span>
+          <div class="data_text">
+            <span class="name">Nome do Usuário</span>
+            <span class="email">usuario@email.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .main_content {
+      display: flex;
+      justify-content: center; /* Centraliza o conteúdo horizontalmente */
+      align-items: flex-start; /* Alinha o conteúdo no topo */
+      padding-top: 20px; /* Espaço para o título */
+      background-color: #eef5fe;
+      min-height: 100vh;
+    background-size: cover;
+      background-position: center;
+      background-image: url("{% static 'HomeStyle/assets/img/videoloop.gif' %}");
+    }
+  </style>
+
+  <!-- Main Content -->
+  <div class="main_content">
+    <div class="crud_container">
+      <h1 class="center_text">Seja bem vindo ao</h1>
+
+      <div class="profile-picture">
+        <img src="{% static 'DashboardStyle/logo3.png' %}" alt="Logo" class="rounded-image">
+      </div>
+      
+      <p class="sobre">DrugRecall é um web app dedicado à consulta de medicamentos, oferecendo funcionalidades avançadas de gerenciamento (CRUD) manual. Projetado para profissionais da saúde e consumidores conscientes, o aplicativo proporciona acesso rápido e seguro a informações detalhadas sobre medicamentos, incluindo suas características, tipos, fabricantes e possíveis efeitos colaterais.</p>      
+
+    </div>
+  </div>
+</body>
+</html>

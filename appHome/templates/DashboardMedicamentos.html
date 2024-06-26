@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicações - Farmacinha</title>
+  <link rel="stylesheet" href="{% static 'DashboardMedicamentosStyle/style.css' %}">
+  <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="{% static 'DashboardMedicamentosStyle/script.js' %}" defer></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar locked">
+    <div class="logo_items flex">
+      <span class="nav_image">
+        <img src="{% static 'DashboardStyle/logo2.png' %}" alt="logo_img">
+      </span>
+      <span class="logo_name">DrugRecall</span>
+      <i class="bx bx-lock-alt" id="lock-icon" title="Unlock Sidebar"></i>
+      <i class="bx bx-x" id="sidebar-close"></i>
+    </div>
+
+    <div class="menu_container">
+      <div class="menu_items">
+        <ul class="menu_item">
+          <div class="menu_title flex">
+            <span class="title">Dashboard</span>
+            <span class="line"></span>
+          </div>
+          <li class="item">
+            <a href="{% url 'appDashboard' %}" class="link flex">
+              <i class="bx bx-home-alt"></i>
+              <span>Sobre tudo</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="{% url 'appDashboardMedicamentos' %}" class="link flex">
+              <i class="bx bx-grid-alt"></i>
+              <span>Medicações Manuais</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="menu_item">
+          <div class="menu_title flex">
+            <span class="title">Atendentes</span>
+            <span class="line"></span>
+          </div>
+          <li class="item">
+            <a href="{% url 'appDashboardUsuarios' %}" class="link flex">
+              <i class="bx bxs-magic-wand"></i>
+              <span>Usuários</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="link flex">
+              <i class="bx bx-folder"></i>
+              <span>Configuração de cookies</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="{% url 'appDashboardPosts' %}" class="link flex">
+              <i class="bx bx-cloud-upload"></i>
+              <span>Enviar posts</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar_profile flex">
+          <span class="nav_image">
+            <img src="{% static 'images/profile.jpg' %}" alt="profile_img">
+          </span>
+          <div class="data_text">
+            <span class="name">Nome do Usuário</span>
+            <span class="email">usuario@email.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Main Content -->
+  <div class="main_content">
+    <div class="crud_container">
+      <h2>Cadastro de Medicações</h2>
+      <form class="crud_form">
+        <div class="form_group">
+          <label for="medicamento_nome">Nome do Remédio</label>
+          <input type="text" id="medicamento_nome" name="medicamento_nome" required>
+        </div>
+        <div class="form_group">
+          <label for="medicamento_tipo">Tipo</label>
+          <input type="text" id="medicamento_tipo" name="medicamento_tipo" required>
+        </div>
+        <div class="form_group">
+          <label for="empresa_fabricante">Empresa Fabricante</label>
+          <input type="text" id="empresa_fabricante" name="empresa_fabricante" required>
+        </div>
+        <div class="form_group">
+          <label for="efeitos_colaterais">Efeitos Colaterais</label>
+          <textarea id="efeitos_colaterais" name="efeitos_colaterais" rows="4" required></textarea>
+        </div>
+        <div class="form_group">
+          <label for="porque_tomar">Por que Tomar</label>
+          <textarea id="porque_tomar" name="porque_tomar" rows="4" required></textarea>
+        </div>
+        <div class="form_group">
+          <label for="doencas_tratadas">Doenças Tratadas</label>
+          <textarea id="doencas_tratadas" name="doencas_tratadas" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn_submit">Salvar</button>
+        <button type="submit" class="btn_submit2">Adicionar</button>
+        <button type="submit" class="btn_submit3">Limpar os campos</button>
+        <button type="submit" class="btn_submit4">Editar</button>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
